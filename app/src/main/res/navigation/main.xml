@@ -12,22 +12,56 @@
         tools:layout="@layout/login_fragment" >
         <action
             android:id="@+id/action_loginFragment_to_clockifyListFragment"
-            app:destination="@id/clockifyListFragment"
+            app:destination="@id/workspacesListFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
-        android:id="@+id/clockifyListFragment"
-        android:name="com.razzaghi.clockifyapi.view.fragments.ClockifyListFragment"
-        android:label="ClockifyListFragment" >
+        android:id="@+id/workspacesListFragment"
+        android:name="com.razzaghi.clockifyapi.view.fragments.WorkspacesListFragment"
+        android:label="WorkspacesListFragment">
         <action
             android:id="@+id/action_clockifyListFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_workspacesListFragment_to_userListFragment"
+            app:destination="@id/userListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeEntityListFragment"
+        android:name="com.razzaghi.clockifyapi.view.fragments.TimeEntityListFragment"
+        android:label="time_entity_fragment"
+        tools:layout="@layout/time_entity_fragment" >
+        <argument
+            android:name="workspaceId"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.razzaghi.clockifyapi.view.fragments.UserListFragment"
+        android:label="UserListFragment" >
+        <action
+            android:id="@+id/action_userListFragment_to_timeEntityListFragment"
+            app:destination="@id/timeEntityListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="workspaceId"
+            app:argType="string" />
     </fragment>
 </navigation>

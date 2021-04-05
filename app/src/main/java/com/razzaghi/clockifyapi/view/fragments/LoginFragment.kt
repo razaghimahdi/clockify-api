@@ -1,14 +1,15 @@
 package com.razzaghi.clockifyapi.view.fragments
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Typeface
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.razzaghi.clockifyapi.R
 import com.razzaghi.clockifyapi.other.Constants
 import com.razzaghi.clockifyapi.other.Constants.KEY_API
@@ -117,6 +118,8 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
         }
         return true
     }
+
+
 
 
 

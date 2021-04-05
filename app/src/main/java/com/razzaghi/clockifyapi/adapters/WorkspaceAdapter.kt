@@ -12,11 +12,13 @@ import com.razzaghi.clockifyapi.R
 import com.razzaghi.clockifyapi.model.Workspace
 import kotlinx.android.synthetic.main.item_workspace_preview.view.*
 
-class WorkspaceAdapter:RecyclerView.Adapter<WorkspaceAdapter.WorkspaceViewHolder>() {
+class WorkspaceAdapter(
+    private val ClickListener: (Workspace ) -> Unit
+) : RecyclerView.Adapter<WorkspaceAdapter.WorkspaceViewHolder>() {
 
-    inner class WorkspaceViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
+    inner class WorkspaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    private val differCallback = object : DiffUtil.ItemCallback<Workspace>(){
+    private val differCallback = object : DiffUtil.ItemCallback<Workspace>() {
         override fun areItemsTheSame(oldItem: Workspace, newItem: Workspace): Boolean {
             return oldItem.id == newItem.id
         }
@@ -30,7 +32,7 @@ class WorkspaceAdapter:RecyclerView.Adapter<WorkspaceAdapter.WorkspaceViewHolder
     val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkspaceViewHolder {
-        return  WorkspaceViewHolder(
+        return WorkspaceViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.item_workspace_preview,
                 parent,
@@ -58,12 +60,17 @@ class WorkspaceAdapter:RecyclerView.Adapter<WorkspaceAdapter.WorkspaceViewHolder
                 //.fitCenter()
                 .into(imgWorkspace)
 
+
+            setOnClickListener {
+                ClickListener(workspace)
+            }
+
             val newName = workspace.name.split("'s workspace")
-            txtWorkspace.text= newName[0]
+            txtWorkspace.text = newName[0]
+
 
         }
     }
-
 
 
 }

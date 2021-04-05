@@ -6,7 +6,8 @@
     android:layout_height="85dp"
     android:layout_margin="8dp"
     app:cardElevation="8dp"
-    app:cardCornerRadius="6dp">
+    app:cardCornerRadius="6dp"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -15,7 +16,7 @@
 
         <LinearLayout
             android:padding="8dp"
-            android:gravity="right|top"
+            android:gravity="right|center"
             android:layout_weight="8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -28,28 +29,6 @@
                 android:id="@+id/txtWorkspace"
                 />
 
-            <LinearLayout
-                android:gravity="right"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.razzaghi.clockifyapi.util.SimpleTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:id="@+id/txtAmount"
-                    android:layout_marginRight="4dp"
-                    />
-                <com.razzaghi.clockifyapi.util.SimpleTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USD"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:id="@+id/txtCurrency"
-                    />
-            </LinearLayout>
 
         </LinearLayout>
 

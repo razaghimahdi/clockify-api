@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="85dp"
+    android:layout_margin="8dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="6dp"
+    android:foreground="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:gravity="right|top"
+            android:layout_weight="8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center"
+                android:orientation="vertical">
+
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شروع کار:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    />
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="start"
+                    android:textSize="12sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:id="@+id/txtStart"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center"
+                android:orientation="vertical">
+
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="پایان کار:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    />
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="end"
+                    android:textSize="12sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:id="@+id/txtEnd"
+                    />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/linearDesc"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center"
+                android:orientation="vertical">
+
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="توضیح:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    />
+                <com.razzaghi.clockifyapi.util.SimpleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="description"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:id="@+id/txtDescription"
+                    android:textSize="12sp"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
